@@ -1,0 +1,10 @@
+{% load static %}
+      <div class="row">
+            <div class="col-lg-12">
+                <!-- Banner -->
+                 {% for DTBanner in ObjBanner %}
+                     <img width="100%" src="{% static DTBanner.ImageURL %}" alt="">
+                 {% endfor %}
+                
+            </div>
+        </div>

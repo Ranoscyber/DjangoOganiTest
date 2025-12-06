@@ -1,0 +1,38 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {% include 'accounts/Head.html' %}
+
+</head>
+<body>
+    <div class="container">
+        <!-- Banner -->
+        {% include 'accounts/Banner.html' %}
+
+        <!-- Menu -->
+         {% include 'accounts/Menu.html' %}
+
+         <!-- Slide Show -->
+          {% include 'accounts/Slideshow.html' %}
+
+        <div class="row">
+          
+            <!-- Slidebar left -->
+             {% include 'accounts/Slidebarleft.html' %}
+
+            <div class="col-lg-8">
+               <h1>Login</h1>
+            </div>
+            
+            <!-- Slidebar Right -->
+            {% include 'accounts/Slidebarright.html' %}
+
+        </div>
+        {% include 'accounts/Footer.html' %}
+</body>
+</html>

@@ -1,0 +1,7 @@
+{% load static %}
+            <div class="col-lg-2">
+                {% for ObjSlidebarright in ObjSlidebarright %}
+                <img width="100%" src="{% static ObjSlidebarright.ImageURL %}" alt="">
+                {% endfor %}
+                
+            </div>

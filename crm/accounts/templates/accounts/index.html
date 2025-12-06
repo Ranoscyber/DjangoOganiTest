@@ -1,0 +1,123 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUB</title>
+
+    {% include 'accounts/Head.html' %}
+
+</head>
+<body>
+    <div class="container">
+        <!-- Banner -->
+        {% include 'accounts/Banner.html' %}
+
+        <!-- Menu -->
+         {% include 'accounts/Menu.html' %}
+
+         <!-- Slide Show -->
+          {% include 'accounts/Slideshow.html' %}
+
+        <div class="row">
+          
+            <!-- Slidebar left -->
+             {% include 'accounts/Slidebarleft.html' %}
+            <div class="col-lg-8">
+                <p>Using Get</p>
+                {{Objusingget.ImageURL}}
+                <br>
+                <p>Using Exclude</p>
+                {% for ObjuseExclude in ObjuseExclude %}
+                    {{ObjuseExclude.id}}<br/>
+                    {{ObjuseExclude.ImageURL}}<br/>
+                {% endfor %}
+                <br>
+                <hr>
+                <p>Using Order by ASC</p>
+                {% for ObjUseOrderByASC in ObjUseOrderByASC %}
+                {{ObjUseOrderByASC.id}}<br/>
+                {{ObjUseOrderByASC.ImageURL}}<br/>
+                {% endfor %}
+                <br>
+                <hr>
+
+                <p>Using Orderby DESC</p>
+                {% for ObjUseOrderByDSCE in ObjUseOrderByDSCE %}
+                    {{ObjUseOrderByDSCE.id}}<br/>
+                    {{ObjUseOrderByDSCE.ImageURL}}<br/>
+                {% endfor %}
+                <br>
+                <hr>
+                <p>Use First()</p>
+                {{ObjUseFirst.id}}
+                {{ObjUseFirst.ImageURL}}
+                <br>
+                <hr>
+                <p>use Last</p>
+                {{ObjUseLast.id}}
+                {{ObjUseLast.ImageURL}}
+                <br>
+                <hr>
+                <p>Use count</p>
+                {{ObjUsecount}}
+               
+                <br><hr>
+                <p>Use Exit</p>
+                {{ObjUseExits}}
+                
+
+                <br><br>
+                <hr>
+               <h1>Content</h1>
+                Total Price : {{ ObjTotalprice }}  
+                <h1>
+                {{ ObjAUB }}
+                </h1>
+
+                <br>
+                <select>
+                {% for Days in ObjDays %}
+                    <option value="">
+                        ថ្ងៃ {{Days}}
+                    </option>
+                {% endfor %}
+                </select>
+
+                  <select>
+                {% for Dayty in ObjDayty %}
+                    <option value="">
+                        ទី {{Dayty}}
+                    </option>
+                {% endfor %}
+                </select>
+                
+                   <select>
+                {% for Months in ObjMonths %}
+                    <option value="">
+                        ខែ {{Months}}
+                    </option>
+                {% endfor %}
+                </select>
+
+                   <select>
+                {% for Years in ObjYears %}
+                    <option value="">
+                        ឆ្នាំ {{Years}}
+                    </option>
+                {% endfor %}
+                </select>
+                
+                <h1>Good Morning {{Objname}}</h1>
+            </div>
+
+        
+
+            <!-- Slidebar Right -->
+            {% include 'accounts/Slidebarright.html' %}
+
+        </div>
+        {% include 'accounts/Footer.html' %}
+</body>
+</html>

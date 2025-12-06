@@ -1,0 +1,42 @@
+{% load static %}
+
+<h2 style="text-align: center; font-family: Arial, sans-serif; color: #333;">Billing List</h2>
+
+<table style="
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+">
+    <thead style="background-color: #4CAF50; color: white;">
+        <tr>
+            <th style="padding: 12px 15px; text-align: left;">Name</th>
+            <th style="padding: 12px 15px; text-align: left;">Phone</th>
+            <th style="padding: 12px 15px; text-align: left;">Email</th>
+            <th style="padding: 12px 15px; text-align: left;">Address</th>
+            <th style="padding: 12px 15px; text-align: right;">Total</th>
+            <th style="padding: 12px 15px; text-align: center;">Receipt</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for bill in billings %}
+        <tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 10px;">{{ bill.first_name }} {{ bill.last_name }}</td>
+            <td style="padding: 10px;">{{ bill.phone }}</td>
+            <td style="padding: 10px;">{{ bill.email }}</td>
+            <td style="padding: 10px;">{{ bill.address }}</td>
+            <td style="padding: 10px; text-align: right;">${{ bill.total }}</td>
+            <td style="padding: 10px; text-align: center;">
+                <img src="{% static bill.qr_code_image %}" width="100" style="border: 1px solid #ccc; border-radius: 8px;">
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6" style="padding: 10px; text-align: center; color: #999;">
+                No billing records found.
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

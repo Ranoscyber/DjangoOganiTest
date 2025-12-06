@@ -1,0 +1,9 @@
+=======[Plan to Build Project]=========
+
+1.Plan 
+2.Analyst
+3.Design 
+4.Coding
+5.Test 
+6.Deploy
+7: Maintenance

@@ -1,0 +1,8 @@
+{% load static %}
+        <div class="row">
+            <div class="col-lg-12">
+                {% for ObjFooter in ObjFooter %}
+               <img width="100%" src="{% static ObjFooter.ImageURL %}" alt="">
+               {% endfor %}
+            </div>
+        </div>
