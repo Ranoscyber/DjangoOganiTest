@@ -5,7 +5,7 @@ urlpatterns = [
     path('home/', views.home),
     path('products/', views.products),
     path('customer/', views.customer),
-    
+        
     path('Index/' , views.index),
     path('Contactus/' , views.Contactus,name="Contactus"),
     path('aboutus/' , views.aboutus,name="aboutus"),
@@ -21,6 +21,7 @@ urlpatterns = [
     path('Contact/',views.Contact,name="Contact"),
     path('ShopDetails/<int:pk>/',views.ShopDetails,name="ShopDetails"),
     path('ShopingCart/',views.ShopingCart,name="ShopingCart"),
+    path('shopGridByCat/<int:CatID>/',views.shopGridByCat,name="shopGridByCat"),
 
 
     path('create/', views.create_book, name='create_book'),

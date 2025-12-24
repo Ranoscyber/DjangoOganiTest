@@ -7,7 +7,7 @@
                      {% for ObjDTCategory in ObjDTCategory %}
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="{% static ObjDTCategory.categoryImage %}">
-                            <h5><a href="#">{{ObjDTCategory.categoryName}}</a></h5>
+                            <h5><a href="{% url 'shopGridByCat' ObjDTCategory.id %}">{{ObjDTCategory.categoryName}}</a></h5>
                         </div>
                     </div>
                     {% endfor %}

@@ -108,8 +108,25 @@ def ShopDetails(request,pk):
 
 def ShopingCart(request):
     return render(request,'Ogani/shoping-cart.html')
+
 def OganiShopGrid(request):
-    return render(request, 'Ogani/shop-grid.html')
+    DTProduct = Product.objects.all()
+    DTCategory = Category.objects.all()
+
+    context = {
+        'ObjDTProduct':DTProduct,
+        'ObjDTCategory':DTCategory
+    }
+    return render(request, 'Ogani/shop-grid.html',context)
+
+def shopGridByCat(request, CatID):
+    DTCategory = Category.objects.all()
+    DTProductByCat = Product.objects.filter(categoryID = CatID)
+    context = {
+        'ObjDTProductByCat' : DTProductByCat,
+        'ObjDTCategory':DTCategory
+    }
+    return render(request, 'Ogani/shop-grid-by-cat.html',context)
 
 
 #==========================================
